@@ -62,7 +62,7 @@ function getMdFiles(dir) {
 }
 
 function getTitleFromHtml(html) {
-  const h1Match = html.match(/<h1[^>]*>(.*?)<\/h1>/);
+  const h1Match = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
   if (h1Match) return h1Match[1].replace(/<[^>]+>/g, '');
   return '';
 }
@@ -80,7 +80,7 @@ function main() {
       urlPath = urlPath.slice(0, -'/index'.length) + '/';
     }
 
-    const content = fs.readFileSync(filePath, 'utf-8');
+    const content = fs.readFileSync(filePath, 'utf-8').replace(/^\uFEFF/, '');
     const { meta, body } = parseFrontmatter(content);
 
     let html = '';
@@ -98,6 +98,8 @@ function main() {
       title,
       description: meta.description || '',
       html,
+      tags: meta.tags ? meta.tags.split(',').map(t => t.trim()) : undefined,
+      created: meta.created || undefined,
     });
   }
 

@@ -7,10 +7,10 @@ export const sidebarData: SidebarItem[] = [
     items: [
       { text: '1.0 阶段导读', link: '/1-start/01-intro' },
       { text: '1.1 收益逻辑详解', link: '/1-start/02-revenue' },
-      { text: '1.2 入池概念深度拆解' },
-      { text: '1.3 赛道选择与定位' },
-      { text: '1.4 对标账号套用与资料准备' },
-      { text: '1.5 账号注册与注意事项' },
+      { text: '1.2 入池概念深度拆解', link: '/1-start/03-concept' },
+      { text: '1.3 赛道选择与定位', link: '/1-start/04-niche' },
+      { text: '1.4 对标账号套用与资料准备', link: '/1-start/05-profile' },
+      { text: '1.5 账号注册与注意事项', link: '/1-start/06-register' },
     ],
   },
   {

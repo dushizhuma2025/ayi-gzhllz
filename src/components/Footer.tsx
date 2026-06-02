@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
           </a>
         </div>
         <div className="footer-copyright">
-          本文网站由阿一AI编程完成，用时1小时
+          本教程网站由阿一AI编程完成，用时1小时。教程内容为阿一长期日常公众号实操复盘总结。
         </div>
       </div>
     </footer>

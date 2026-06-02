@@ -62,7 +62,7 @@ export const sidebarData: SidebarItem[] = [
     ],
   },
   {
-    text: '📚 第六阶段：百问百答与速查工具',
+    text: '📚 第六阶段：常见问题速查',
     collapsed: true,
     items: [
       { text: '6.1 运营百问百答 FAQ' },

@@ -46,6 +46,7 @@ module.exports = (env, argv) => {
       hot: true,
       historyApiFallback: true,
       static: [
+        { directory: path.resolve(__dirname, 'public'), publicPath: '/' },
         { directory: path.resolve(__dirname, 'docs/public'), publicPath: '/' },
       ],
     },

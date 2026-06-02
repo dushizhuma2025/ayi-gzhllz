@@ -1,5 +1,5 @@
 export interface PageData {
-  urlPath: string;
+  path: string;
   title: string;
   description: string;
   html: string;
@@ -8,7 +8,8 @@ export interface PageData {
 }
 
 export interface SidebarItem {
-  title: string;
-  urlPath?: string;
+  text: string;
+  link?: string;
+  collapsed?: boolean;
   items?: SidebarItem[];
 }

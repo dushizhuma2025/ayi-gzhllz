@@ -42,7 +42,7 @@ export const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="home-hero">
         <div className="hero-content">
-          <span className="badge">从入门到赚钱</span>
+          <span className="badge">从入门到提现</span>
           <h1 className="hero-title">
             微信公众号流量主<br />
             <span className="gradient-text">从零起步到 AI 高效创作指南</span>

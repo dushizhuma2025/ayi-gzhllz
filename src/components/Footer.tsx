@@ -6,7 +6,7 @@ export const Footer: React.FC = () => {
       <div className="footer-content">
         <div className="footer-links">
           <span className="footer-title">友情链接：</span>
-          <a href="https://ayi.ai" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.ayi001.xyz" target="_blank" rel="noopener noreferrer">
             阿一 AI 站
           </a>
           <span className="divider">|</span>
@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
           </a>
         </div>
         <div className="footer-copyright">
-          &copy; {new Date().getFullYear()} 阿一 AI. All rights reserved. 版权所有。
+          本文网站由阿一AI编程完成，用时1小时
         </div>
       </div>
     </footer>

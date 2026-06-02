@@ -86,8 +86,6 @@ export const ArticleView: React.FC = () => {
       {page.description && (
         <div style={{
           marginBottom: '24px',
-          paddingBottom: '16px',
-          borderBottom: '1px solid var(--border-gray-light)',
           fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif',
           fontSize: '14px',
           color: 'var(--text-secondary)',
@@ -97,12 +95,6 @@ export const ArticleView: React.FC = () => {
           gap: '12px'
         }}>
           <span>当前学习：{page.description}</span>
-          {page.created && (
-            <>
-              <span style={{ color: 'var(--border-gray-light)' }}>|</span>
-              <span>发布时间：{page.created}</span>
-            </>
-          )}
         </div>
       )}
       <div dangerouslySetInnerHTML={{ __html: page.html }} />

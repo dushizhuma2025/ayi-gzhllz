@@ -13,7 +13,51 @@ export const ArticleView: React.FC = () => {
   );
 
   if (!page) {
-    // 若找不到路由，重定向到第一章 1.0 阶段导读
+    // 如果当前路径已经是首篇教程，且数据源里没有它，说明 pages.json 损坏或未生成
+    if (currentPath === '/1-start/01-intro') {
+      return (
+        <div style={{ padding: '40px 24px', maxWidth: '600px', margin: '40px auto', textAlign: 'center' }}>
+          <h2 style={{ color: 'var(--text-primary)', marginBottom: '16px', fontSize: '24px', fontWeight: 600 }}>
+            数据未加载或配置错误
+          </h2>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: '24px', fontSize: '15px', lineHeight: 1.6 }}>
+            未能在 <code>pages.json</code> 中找到首篇教程的数据（<code>/1-start/01-intro</code>）。这通常是因为数据转换脚本未运行或配置有误。
+          </p>
+          <div style={{ 
+            background: 'rgba(255, 255, 255, 0.03)', 
+            border: '1px solid var(--border-gray)', 
+            borderRadius: '12px', 
+            padding: '20px', 
+            textAlign: 'left',
+            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace',
+            fontSize: '14px',
+            color: 'var(--text-secondary)'
+          }}>
+            <p style={{ margin: '0 0 12px 0', fontWeight: 'bold', color: 'var(--text-primary)' }}>解决方法：</p>
+            <ol style={{ margin: 0, paddingLeft: '20px', lineHeight: 1.6 }}>
+              <li style={{ marginBottom: '8px' }}>
+                请检查 <code>src/data/pages.json</code> 文件是否存在。
+              </li>
+              <li>
+                在终端（项目根目录下）运行以下命令生成页面数据：
+                <code style={{ 
+                  background: '#1c1c1e', 
+                  color: '#ff453a', 
+                  padding: '6px 10px', 
+                  borderRadius: '6px', 
+                  display: 'block', 
+                  marginTop: '8px', 
+                  fontFamily: 'SFMono-Regular, Consolas, Monaco, monospace' 
+                }}>
+                  node scripts/convert.js
+                </code>
+              </li>
+            </ol>
+          </div>
+        </div>
+      );
+    }
+    // 若找不到其他路由，重定向到第一章 1.0 阶段导读
     return <Navigate to="/1-start/01-intro" replace />;
   }
 
@@ -23,3 +67,4 @@ export const ArticleView: React.FC = () => {
     </article>
   );
 };
+

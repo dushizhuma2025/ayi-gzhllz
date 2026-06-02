@@ -534,252 +534,282 @@
 
 ---
 
-### Task 4: 开发首页 (HomePage) (Apple 纯黑 Hero 视觉)
-
-**Files:**
-- Create: `src/components/HomePage.tsx`
-
-- [ ] **Step 1: 创建 `src/components/HomePage.tsx`**
-  实现首页的高级视觉展示（深邃黑与极简白的交织）：
-  ```typescript
-  import React from 'react';
-  import { Link } from 'react-router-dom';
-
-  export const HomePage: React.FC = () => {
-    return (
-      <div>
-        {/* Apple 黑色 Hero 区 */}
-        <section style={{
-          backgroundColor: '#000000',
-          color: '#ffffff',
-          padding: '80px 20px',
-          textAlign: 'center'
-        }}>
-          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <h1 style={{
-              fontSize: '48px',
-              fontWeight: 600,
-              letterSpacing: '-1.5px',
-              margin: '0 0 20px 0',
-              lineHeight: 1.1
-            }}>
-              零基础，靠阅读变现
-            </h1>
-            <p style={{
-              fontSize: '20px',
-              color: '#a1a1a6',
-              marginBottom: '30px',
-              fontWeight: 400
-            }}>
-              微信公众号流量主 2026 最新全体系实战教程
-            </p>
-            <div style={{ display: 'flex', gap: '15px', justifyContent: 'center' }}>
-              <Link to="/1-start/01-intro" className="btn-capsule" style={{ color: '#fff', padding: '12px 30px', fontSize: '16px' }}>
-                立即开始学习
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* 六大阶段大纲展示 */}
-        <section style={{ padding: '60px 20px', backgroundColor: '#f5f5f7' }}>
-          <div style={{ maxWidth: '980px', margin: '0 auto' }}>
-            <h2 style={{ textAlign: 'center', fontSize: '32px', marginBottom: '40px', fontWeight: 600 }}>
-              六个阶段，助你全面起跑
-            </h2>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '20px'
-            }}>
-              {[
-                { step: '1', title: '🚀 快速起步', desc: '收益逻辑详解、入池概念、取名与资料设置' },
-                { step: '2', title: '💪 账号起号', desc: '100粉丝快速过流量主门槛、冷启动日记与贴图起步' },
-                { step: '3', title: '⚡ 高效创作', desc: '倒推指令法学习风格、文皮皮相似度与朱雀AI率检测' },
-                { step: '4', title: '🎯 爆款运营', desc: '微信搜一搜筛选低粉爆款标题、受众垂直选题模型' },
-                { step: '5', title: '🔧 风控避坑', desc: '5条断流红线、低创申诉话术、限流诊断自查公式' },
-                { step: '6', title: '📚 百问百答', desc: '屏蔽熟人小技巧、AI自检违规内容、老号起号指南' }
-              ].map((item, index) => (
-                <div key={index} style={{
-                  backgroundColor: '#ffffff',
-                  padding: '30px',
-                  borderRadius: '18px',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.02)',
-                  border: '1px solid #d2d2d7'
-                }}>
-                  <div style={{ fontSize: '14px', color: '#0071e3', fontWeight: 600, marginBottom: '10px' }}>阶段 {item.step}</div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 600, marginTop: 0, marginBottom: '10px' }}>{item.title}</h3>
-                  <p style={{ fontSize: '14px', color: '#6e6e73', margin: 0, lineHeight: 1.4 }}>{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </div>
-    );
-  };
-  ```
-
 ---
 
-### Task 5: 开发文档教程展示页 (DocPage & Sidebar)
+### Task 4: 优化教程阅读渲染器 (ArticleView) 与 Markdown 样式排版
 
 **Files:**
-- Create: `src/components/Sidebar.tsx`
-- Create: `src/components/DocPage.tsx`
-- Create: `src/App.tsx`
-- Create: `src/index.tsx`
+- Modify: `src/components/ArticleView.tsx`
+- Modify: `src/styles/main.css`
 
-- [ ] **Step 1: 创建侧边栏组件 `src/components/Sidebar.tsx`**
-  实现大纲的二级可折叠渲染：
-  ```typescript
-  import React from 'react';
-  import { Link, useLocation } from 'react-router-dom';
-  import { sidebarData } from '../data/sidebar';
-
-  export const Sidebar: React.FC = () => {
-    const location = useLocation();
-
-    return (
-      <aside className="sidebar">
-        {sidebarData.map((section, idx) => (
-          <div key={idx} style={{ marginBottom: '20px' }}>
-            <h3 style={{ fontSize: '15px', color: '#86868b', marginBottom: '8px', fontWeight: 600 }}>
-              {section.text}
-            </h3>
-            {section.items && (
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                {section.items.map((item, subIdx) => {
-                  const isActive = location.pathname === item.link;
-                  return (
-                    <li key={subIdx} style={{ margin: '6px 0' }}>
-                      <Link
-                        to={item.link || '#'}
-                        style={{
-                          fontSize: '14px',
-                          color: isActive ? '#0071e3' : '#1d1d1f',
-                          fontWeight: isActive ? 600 : 400,
-                          textDecoration: 'none'
-                        }}
-                      >
-                        {item.text}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
-          </div>
-        ))}
-      </aside>
-    );
-  };
-  ```
-
-- [ ] **Step 2: 创建文档详情页面 `src/components/DocPage.tsx`**
-  展示 Markdown 编译后的 HTML，并支持首屏 window 变量获取：
+- [ ] **Step 1: 升级 ArticleView.tsx 的加载机制**
+  修改 `src/components/ArticleView.tsx`，支持静态编译生成的 window 注入变量，添加 metadata 渲染：
   ```typescript
   import React, { useEffect, useState } from 'react';
-  import { useLocation } from 'react-router-dom';
-  import { Sidebar } from './Sidebar';
+  import { useLocation, Navigate } from 'react-router-dom';
   import pagesData from '../data/pages.json';
   import { PageData } from '../types';
 
-  export const DocPage: React.FC = () => {
+  export const ArticleView: React.FC = () => {
     const location = useLocation();
     const [page, setPage] = useState<PageData | null>(null);
 
     useEffect(() => {
-      // 1. 尝试从 build-static.js 注入的全局变量加载
       const win = window as any;
       if (win.__PAGE_DATA__ && win.__PAGE_DATA__.path === location.pathname) {
         setPage(win.__PAGE_DATA__);
         return;
       }
 
-      // 2. 从本地 pages.json 获取数据
-      const found = pagesData.pages.find(p => p.path === location.pathname);
+      const found = pagesData.pages.find((p) => p.path === location.pathname);
       if (found) {
-        setPage(found);
+        setPage(found as PageData);
       } else {
         setPage(null);
       }
     }, [location.pathname]);
 
-    if (!page) {
-      return (
-        <div style={{ display: 'flex', flex: 1 }}>
-          <Sidebar />
-          <div style={{ padding: '40px', flex: 1 }}>
-            <h2>页面加载中或未找到此页面</h2>
-            <p>请点击左侧侧边栏切换阅读章节。</p>
-          </div>
-        </div>
-      );
+    // 如果是访问根路由且没有匹配到（/），或者路由不存在，直接重定向到第一课
+    if (location.pathname === '/' || !page) {
+      if (location.pathname === '/') {
+        return <Navigate to="/1-start/01-intro" replace />;
+      }
+      const hasChecked = pagesData.pages.some(p => p.path === location.pathname);
+      if (hasChecked) {
+        return <Navigate to="/1-start/01-intro" replace />;
+      }
+      return <div style={{ padding: '40px' }}>加载中...</div>;
     }
 
     return (
-      <div style={{ display: 'flex', flex: 1 }}>
-        <Sidebar />
-        <article style={{
-          padding: '40px 60px',
-          flex: 1,
-          maxWidth: '800px',
-          boxSizing: 'border-box'
-        }}>
-          <header style={{ marginBottom: '30px', borderBottom: '1px solid #d2d2d7', paddingBottom: '10px' }}>
-            <p style={{ color: '#6e6e73', fontSize: '13px', margin: 0 }}>当前学习阶段：{page.description}</p>
-          </header>
-          {/* 渲染 Markdown 转换来的 HTML */}
-          <div
-            className="markdown-body"
-            dangerouslySetInnerHTML={{ __html: page.html }}
-            style={{ lineHeight: 1.6, fontSize: '16px' }}
-          />
-        </article>
+      <article className="markdown-body">
+        {page.description && (
+          <div className="article-meta">
+            <span>当前学习：{page.description}</span>
+            {page.created && <span style={{ marginLeft: '15px' }}>发布时间：{page.created}</span>}
+          </div>
+        )}
+        <div dangerouslySetInnerHTML={{ __html: page.html }} />
+      </article>
+    );
+  };
+  ```
+
+- [ ] **Step 2: 补充 Markdown 渲染排版样式到 `src/styles/main.css`**
+  在 `src/styles/main.css` 的末尾追加高质感的排版：
+  ```css
+  /* Markdown 内容呼吸感排版 */
+  .markdown-body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    color: var(--text-primary);
+    font-size: 17px;
+    line-height: 1.62;
+  }
+
+  .article-meta {
+    font-size: 13px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-gray);
+    padding-bottom: 12px;
+    margin-bottom: 30px;
+  }
+
+  .markdown-body h1 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+
+  .markdown-body h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border-gray);
+    padding-bottom: 8px;
+  }
+
+  .markdown-body p {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .markdown-body blockquote {
+    margin: 20px 0;
+    padding: 0 15px;
+    color: var(--text-secondary);
+    border-left: 4px solid var(--action-blue);
+    background-color: var(--bg-gray);
+    border-radius: 0 8px 8px 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .markdown-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 15px;
+  }
+
+  .markdown-body th {
+    background-color: var(--bg-gray);
+    font-weight: 600;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 2px solid var(--border-gray);
+  }
+
+  .markdown-body td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border-gray);
+  }
+  ```
+
+---
+
+### Task 5: 开发右侧 TOC (Table of Contents) 目录与滚动高亮组件
+
+**Files:**
+- Create: `src/components/TOC.tsx`
+- Modify: `src/components/Layout.tsx`
+- Modify: `src/styles/main.css`
+
+- [ ] **Step 1: 创建 `src/components/TOC.tsx` 组件**
+  利用 DOM 查询和 IntersectionObserver 实现自动高亮右侧目录：
+  ```typescript
+  import React, { useEffect, useState } from 'react';
+  import { useLocation } from 'react-router-dom';
+
+  interface TOCItem {
+    id: string;
+    text: string;
+    level: number;
+  }
+
+  export const TOC: React.FC = () => {
+    const [list, setList] = useState<TOCItem[]>([]);
+    const [activeId, setActiveId] = useState<string>('');
+    const location = useLocation();
+
+    useEffect(() => {
+      const article = document.querySelector('.markdown-body');
+      if (!article) return;
+
+      const headings = article.querySelectorAll('h2, h3');
+      const items: TOCItem[] = [];
+
+      headings.forEach((heading, idx) => {
+        let id = heading.id;
+        if (!id) {
+          id = `heading-${idx}`;
+          heading.setAttribute('id', id);
+        }
+        items.push({
+          id,
+          text: heading.textContent || '',
+          level: heading.tagName === 'H2' ? 2 : 3
+        });
+      });
+
+      setList(items);
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const visible = entries.filter((e) => e.isIntersecting);
+          if (visible.length > 0) {
+            setActiveId(visible[0].target.id);
+          }
+        },
+        { rootMargin: '-48px 0px -40% 0px' }
+      );
+
+      headings.forEach((h) => observer.observe(h));
+      return () => observer.disconnect();
+    }, [location.pathname]);
+
+    if (list.length === 0) return null;
+
+    return (
+      <nav className="toc-container">
+        <h4 style={{ fontSize: '12px', color: '#86868b', textTransform: 'uppercase', marginBottom: '10px' }}>本文目录</h4>
+        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+          {list.map((item) => (
+            <li
+              key={item.id}
+              style={{
+                marginLeft: item.level === 3 ? '12px' : '0',
+                margin: '8px 0'
+              }}
+            >
+              <a
+                href={`#${item.id}`}
+                className={activeId === item.id ? 'active' : ''}
+                style={{
+                  fontSize: '13px',
+                  color: activeId === item.id ? '#0071e3' : '#6e6e73',
+                  fontWeight: activeId === item.id ? 600 : 400
+                }}
+              >
+                {item.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    );
+  };
+  ```
+
+- [ ] **Step 2: 在 `src/components/Layout.tsx` 整合右侧 TOC 并渲染**
+  修改 Layout，支持左右三栏布局：
+  ```typescript
+  import React from 'react';
+  import { Outlet } from 'react-router-dom';
+  import { Navbar } from './Navbar';
+  import { Footer } from './Footer';
+  import { Sidebar } from './Sidebar';
+  import { TOC } from './TOC';
+
+  export const Layout: React.FC = () => {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Navbar />
+        <div style={{ display: 'flex', flex: 1, marginTop: '48px', position: 'relative' }}>
+          <Sidebar />
+          <main style={{ flex: 1, display: 'flex', justifyContent: 'center', backgroundColor: '#ffffff' }}>
+            <Outlet />
+          </main>
+          <TOC />
+        </div>
+        <Footer />
       </div>
     );
   };
   ```
 
-- [ ] **Step 3: 创建主入口路由 `src/App.tsx`**
-  ```typescript
-  import React from 'react';
-  import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-  import { Layout } from './components/Layout';
-  import { HomePage } from './components/HomePage';
-  import { DocPage } from './components/DocPage';
+- [ ] **Step 3: 添加 TOC 侧边容器样式到 `src/styles/main.css`**
+  ```css
+  /* TOC 容器样式 */
+  .toc-container {
+    width: 200px;
+    padding: 30px 15px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 48px;
+    height: calc(100vh - 48px);
+    overflow-y: auto;
+    border-left: 1px solid var(--border-gray);
+  }
 
-  export const App: React.FC = () => {
-    return (
-      <Router>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            {/* 所有多级文档路径都进入 DocPage 组件 */}
-            <Route path="/:p1/:p2" element={<DocPage />} />
-          </Routes>
-        </Layout>
-      </Router>
-    );
-  };
-  ```
-
-- [ ] **Step 4: 创建 React 挂载入口 `src/index.tsx`**
-  ```typescript
-  import React from 'react';
-  import ReactDOM from 'react-dom/client';
-  import { App } from './App';
-  import './styles/main.css';
-
-  const root = ReactDOM.createRoot(
-    document.getElementById('root') as HTMLElement
-  );
-  root.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
+  .toc-container a:hover {
+    color: var(--action-blue) !important;
+    text-decoration: none;
+  }
   ```
 
 ---

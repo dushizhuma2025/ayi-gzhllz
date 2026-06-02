@@ -73,10 +73,6 @@ export const Home: React.FC = () => {
               alt="微信公众号流量主从零起步到 AI 高效创作指南" 
               className="hero-image"
             />
-            <div className="glass-card-info">
-              <span className="glass-number">10x</span>
-              <span className="glass-text">AI 辅助创作提效</span>
-            </div>
           </div>
         </div>
       </section>

@@ -4,13 +4,25 @@ import { sidebarData } from '../data/sidebar';
 
 interface SidebarProps {
   collapsed: boolean;
+  toggleSidebar: () => void;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ collapsed }) => {
+export const Sidebar: React.FC<SidebarProps> = ({ collapsed, toggleSidebar }) => {
   const location = useLocation();
 
   return (
     <aside className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
+      <button 
+        className="sidebar-toggle-btn sidebar-toggle-close"
+        onClick={toggleSidebar}
+        title="折叠侧边栏"
+        aria-label="Collapse Sidebar"
+      >
+        <svg viewBox="0 0 18 18" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <rect x="2" y="2" width="14" height="14" rx="3" />
+          <path d="M6 2V16" />
+        </svg>
+      </button>
       <nav className="sidebar-nav">
         {sidebarData.map((group, idx) => (
           <div key={idx} className="sidebar-group">

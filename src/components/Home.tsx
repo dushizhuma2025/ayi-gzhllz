@@ -55,12 +55,12 @@ export const Home: React.FC = () => {
               开始学习课程
             </Link>
             <a 
-              href="https://mp.weixin.qq.com" 
+              href="https://www.ayi001.xyz" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn-capsule hero-secondary"
             >
-              登录公众号后台
+              阿一公众号AI工具
             </a>
           </div>
         </div>

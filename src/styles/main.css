@@ -216,30 +216,6 @@ hr {
   display: inline-block;
 }
 
-.navbar-toggle-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border: none;
-  background: transparent;
-  color: var(--text-secondary);
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.navbar-toggle-btn:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  color: var(--text-primary);
-}
-
-.navbar-toggle-btn.collapsed {
-  color: var(--action-blue);
-  background-color: rgba(0, 113, 227, 0.1);
-}
-
 .navbar-right {
   display: flex;
   align-items: center;
@@ -308,6 +284,60 @@ hr {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-top: 32px;
+}
+
+/* Sidebar Toggle Buttons */
+.sidebar-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.sidebar-toggle-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary);
+}
+
+.sidebar-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+/* 展开状态的折叠按钮（放在侧栏右上角） */
+.sidebar-toggle-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+/* 折叠状态的展开按钮（悬浮在内容区左上方贴边） */
+.sidebar-toggle-open {
+  position: fixed;
+  top: calc(var(--navbar-height) + 16px);
+  left: 16px;
+  z-index: 985;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-gray-light);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.sidebar-toggle-open:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--action-blue);
 }
 
 .sidebar-group {

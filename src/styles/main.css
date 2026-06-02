@@ -377,3 +377,124 @@ hr {
     padding: 0 24px;
   }
 }
+
+/* ==========================================
+   Markdown Body Premium Typography & Layout 
+   ========================================== */
+
+/* 宽屏居中显示，两端有呼吸感的 padding (30px 40px)，最大宽度 800px */
+.markdown-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 40px;
+}
+
+/* 苹果标准的 Display Font 字号、粗细以及紧凑的字间距 */
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.021em;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-gray-light);
+  padding-bottom: 8px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.markdown-body h4 {
+  font-size: 17px;
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+
+/* blockquote 设定柔和的底色 (#f5f5f7) 以及明亮的左行动蓝分割线 (--action-blue) */
+.markdown-body blockquote {
+  background-color: #f5f5f7;
+  border-left: 4px solid var(--action-blue);
+  padding: 16px 20px;
+  margin: 24px 0;
+  border-radius: 0 8px 8px 0;
+  color: var(--text-secondary);
+}
+
+.markdown-body blockquote p {
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+/* table、th、td 编写简洁线条风格，符合 Apple Commerce Option 矩阵的视觉标准 */
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 28px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.markdown-body th {
+  background-color: #f5f5f7;
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 14px 16px;
+  border-bottom: 2px solid var(--border-gray);
+}
+
+.markdown-body td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-gray-light);
+  color: var(--text-secondary);
+}
+
+.markdown-body tr:hover td {
+  background-color: rgba(0, 0, 0, 0.01);
+  color: var(--text-primary);
+}
+
+/* 呼吸感行高以及列表优化 */
+.markdown-body p {
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.markdown-body ul, 
+.markdown-body ol {
+  margin-bottom: 20px;
+  padding-left: 24px;
+}
+
+.markdown-body li {
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+
+.markdown-body li p {
+  margin-bottom: 0;
+}
+
+.markdown-body pre {
+  margin: 20px 0;
+}

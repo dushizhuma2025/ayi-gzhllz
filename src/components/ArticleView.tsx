@@ -7,10 +7,30 @@ export const ArticleView: React.FC = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  // 匹配当前路由的页面数据
-  const page = (pagesData.pages as PageData[]).find(
-    (p) => p.path === currentPath
-  );
+  // 使用 State 来存取当前的 Page 页面数据
+  const [page, setPage] = React.useState<PageData | null>(() => {
+    // 初始获取：为了让服务器端渲染或初次渲染时有内容
+    if (typeof window !== 'undefined' && (window as any).__PAGE_DATA__) {
+      const winData = (window as any).__PAGE_DATA__;
+      if (winData.path === currentPath) {
+        return winData;
+      }
+    }
+    return (pagesData.pages as PageData[]).find((p) => p.path === currentPath) || null;
+  });
+
+  React.useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).__PAGE_DATA__) {
+      const winData = (window as any).__PAGE_DATA__;
+      if (winData.path === currentPath) {
+        setPage(winData);
+        return;
+      }
+    }
+    // 退回到 pages.json 查找对应的教程数据渲染
+    const found = (pagesData.pages as PageData[]).find((p) => p.path === currentPath) || null;
+    setPage(found);
+  }, [currentPath]);
 
   if (!page) {
     // 如果当前路径已经是首篇教程，且数据源里没有它，说明 pages.json 损坏或未生成
@@ -63,6 +83,28 @@ export const ArticleView: React.FC = () => {
 
   return (
     <article className="markdown-body">
+      {page.description && (
+        <div style={{
+          marginBottom: '24px',
+          paddingBottom: '16px',
+          borderBottom: '1px solid var(--border-gray-light)',
+          fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif',
+          fontSize: '14px',
+          color: 'var(--text-secondary)',
+          display: 'flex',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '12px'
+        }}>
+          <span>当前学习：{page.description}</span>
+          {page.created && (
+            <>
+              <span style={{ color: 'var(--border-gray-light)' }}>|</span>
+              <span>发布时间：{page.created}</span>
+            </>
+          )}
+        </div>
+      )}
       <div dangerouslySetInnerHTML={{ __html: page.html }} />
     </article>
   );

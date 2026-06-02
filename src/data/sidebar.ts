@@ -53,12 +53,12 @@ export const sidebarData: SidebarItem[] = [
     text: '🔧 第五阶段：风控与避坑',
     collapsed: true,
     items: [
-      { text: '5.0 阶段导读' },
-      { text: '5.1 触碰即断流的 5 条高压红线' },
-      { text: '5.2 “低创作品”判罚处理流程' },
-      { text: '5.3 限流与推流排查诊断' },
-      { text: '5.4 零推荐/断流的全面规避' },
-      { text: '5.5 财务安全与结算防延迟' },
+      { text: '5.0 阶段导读', link: '/5-risk-control/01-intro' },
+      { text: '5.1 触碰即断流的 5 条高压红线', link: '/5-risk-control/02-redlines' },
+      { text: '5.2 “低创作品”判罚处理流程', link: '/5-risk-control/03-low-quality' },
+      { text: '5.3 限流与推流排查诊断', link: '/5-risk-control/04-shadowban-check' },
+      { text: '5.4 零推荐/断流的全面规避', link: '/5-risk-control/05-avoid-zero' },
+      { text: '5.5 财务安全与结算防延迟', link: '/5-risk-control/06-finance-safety' },
     ],
   },
   {

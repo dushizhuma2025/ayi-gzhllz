@@ -75,7 +75,7 @@ export const Home: React.FC = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <rect width="800" height="450" rx="16" fill="url(#placeholder-grad)" />
-              <circle cx="400" cy="225" r="140" fill="url(#circle-grad)" opacity="0.15" />
+              <circle cx="400" cy="225" r="140" fill="url(#circle-grad)" opacity="0.12" />
               <path d="M250 150 L550 300" stroke="white" strokeWidth="2" opacity="0.1" strokeDasharray="5 5" />
               <path d="M550 150 L250 300" stroke="white" strokeWidth="2" opacity="0.1" strokeDasharray="5 5" />
               <g transform="translate(400, 210)">
@@ -93,8 +93,8 @@ export const Home: React.FC = () => {
                   <stop offset="1" stopColor="#2c2c2e" />
                 </linearGradient>
                 <linearGradient id="circle-grad" x1="260" y1="85" x2="540" y2="365" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#0071e3" />
-                  <stop offset="1" stopColor="#00c7fc" />
+                  <stop stopColor="#07c160" />
+                  <stop offset="1" stopColor="#2bdc70" />
                 </linearGradient>
               </defs>
             </svg>

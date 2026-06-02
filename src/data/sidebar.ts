@@ -41,12 +41,12 @@ export const sidebarData: SidebarItem[] = [
     text: '🎯 第四阶段：爆款运营',
     collapsed: true,
     items: [
-      { text: '4.0 阶段导读' },
-      { text: '4.1 爆款标题逆向生成法' },
-      { text: '4.2 选题与对标的日常收集' },
-      { text: '4.3 垂直发文的深度认知' },
-      { text: '4.4 爆款概率的细节控制' },
-      { text: '4.5 场景实战专栏' },
+      { text: '4.0 阶段导读', link: '/4-viral-ops/01-intro' },
+      { text: '4.1 爆款标题逆向生成法', link: '/4-viral-ops/02-title-generator' },
+      { text: '4.2 选题与对标的日常收集', link: '/4-viral-ops/03-topic-collection' },
+      { text: '4.3 垂直发文的深度认知', link: '/4-viral-ops/04-vertical-niche' },
+      { text: '4.4 爆款概率的细节控制', link: '/4-viral-ops/05-burst-control' },
+      { text: '4.5 场景实战专栏', link: '/4-viral-ops/06-case-studies' },
     ],
   },
   {

@@ -29,12 +29,12 @@ export const sidebarData: SidebarItem[] = [
     text: '⚡ 第三阶段：高效创作',
     collapsed: true,
     items: [
-      { text: '3.0 阶段导读' },
-      { text: '3.1 流量主专用 AI 工具盘点' },
-      { text: '3.2 核心方法：倒推指令法' },
-      { text: '3.3 洗稿相似度检测实操' },
-      { text: '3.4 AI 特征率检测与降低' },
-      { text: '3.5 人工润色标准' },
+      { text: '3.0 阶段导读', link: '/3-ai-writing/01-intro' },
+      { text: '3.1 流量主专用 AI 工具盘点', link: '/3-ai-writing/02-ai-tools' },
+      { text: '3.2 核心方法：倒推指令法', link: '/3-ai-writing/03-reverse-prompt' },
+      { text: '3.3 洗稿相似度检测实操', link: '/3-ai-writing/04-duplicate-check' },
+      { text: '3.4 AI 特征率检测与降低', link: '/3-ai-writing/05-ai-rate' },
+      { text: '3.5 人工润色标准', link: '/3-ai-writing/06-manual-polish' },
     ],
   },
   {

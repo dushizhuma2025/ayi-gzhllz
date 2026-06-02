@@ -68,36 +68,11 @@ export const Home: React.FC = () => {
         {/* Hero Image Container with a high-fidelity placeholder */}
         <div className="hero-image-container">
           <div className="placeholder-image-wrapper">
-            <svg 
-              className="placeholder-svg" 
-              viewBox="0 0 800 450" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect width="800" height="450" rx="16" fill="url(#placeholder-grad)" />
-              <circle cx="400" cy="225" r="140" fill="url(#circle-grad)" opacity="0.12" />
-              <path d="M250 150 L550 300" stroke="white" strokeWidth="2" opacity="0.1" strokeDasharray="5 5" />
-              <path d="M550 150 L250 300" stroke="white" strokeWidth="2" opacity="0.1" strokeDasharray="5 5" />
-              <g transform="translate(400, 210)">
-                <rect x="-180" y="-40" width="360" height="80" rx="12" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
-                <text x="0" y="-8" fill="white" fontSize="16" fontWeight="600" textAnchor="middle" fontFamily="sans-serif">
-                  公众号后台收益/数据展示截图 (尺寸比例 16:9)
-                </text>
-                <text x="0" y="16" fill="rgba(255,255,255,0.6)" fontSize="12" textAnchor="middle" fontFamily="sans-serif">
-                  （后期可在此处替换为真实后台界面或AI提效对比图）
-                </text>
-              </g>
-              <defs>
-                <linearGradient id="placeholder-grad" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#1c1c1e" />
-                  <stop offset="1" stopColor="#2c2c2e" />
-                </linearGradient>
-                <linearGradient id="circle-grad" x1="260" y1="85" x2="540" y2="365" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#07c160" />
-                  <stop offset="1" stopColor="#2bdc70" />
-                </linearGradient>
-              </defs>
-            </svg>
+            <img 
+              src="/gzhllzad.png" 
+              alt="微信公众号流量主从零起步到 AI 高效创作指南" 
+              className="hero-image"
+            />
             <div className="glass-card-info">
               <span className="glass-number">10x</span>
               <span className="glass-text">AI 辅助创作提效</span>

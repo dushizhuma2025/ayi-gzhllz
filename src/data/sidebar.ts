@@ -17,12 +17,12 @@ export const sidebarData: SidebarItem[] = [
     text: '💪 第二阶段：账号冷启动',
     collapsed: true,
     items: [
-      { text: '2.0 阶段导读' },
-      { text: '2.1 快速获取100粉丝合规技巧' },
-      { text: '2.2 流量主权限开通配置' },
-      { text: '2.3 起号方法一：日记起步法' },
-      { text: '2.4 起号方法二：小绿书图文起号法' },
-      { text: '2.5 公众号后台基础操作与排版' },
+      { text: '2.0 阶段导读', link: '/2-coldstart/01-intro' },
+      { text: '2.1 快速获取100粉丝合规技巧', link: '/2-coldstart/02-fans' },
+      { text: '2.2 流量主权限开通配置', link: '/2-coldstart/03-permissions' },
+      { text: '2.3 起号方法一：日记起步法', link: '/2-coldstart/04-diary' },
+      { text: '2.4 起号方法二：小绿书图文起号法', link: '/2-coldstart/05-xiaolushu' },
+      { text: '2.5 公众号后台基础操作与排版', link: '/2-coldstart/06-publish' },
     ],
   },
   {

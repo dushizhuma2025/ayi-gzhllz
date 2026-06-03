@@ -22,7 +22,7 @@ created: "2026-06-02"
 *   **正确做法**：不搞任何刷量与无效互动，完全依靠公域算法推流和自然的垂直流量。
 
 <p align="center">
-  <img src="/2-0-1.jpg" width="300" alt="一定要远离这种互助互粉" />
+  <img src="https://n8jmply6oexq.meoo.fun/sb-api/storage/v1/object/public/ayi_oss/public/1780479992688-2-0-1.jpg" width="300" alt="一定要远离这种互助互粉" />
 </p>
 
 

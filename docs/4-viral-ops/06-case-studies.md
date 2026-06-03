@@ -28,7 +28,7 @@ created: "2026-06-02"
 - **排版技巧**：**正文字体调大 1~2 号**（建议使用 18px ~ 19px），行距调宽（1.8 ~ 2.0），以方便有老花眼的老人舒适阅读。多配充满时代怀旧感的老照片。
 
 <p align="center">
-  <img src="/4-7-1.png" width="95%" alt="中老年赛道红利比较多" />
+  <img src="https://n8jmply6oexq.meoo.fun/sb-api/storage/v1/object/public/ayi_oss/public/1780479992643-4-7-1.png" width="95%" alt="中老年赛道红利比较多" />
 </p>
 
 ---

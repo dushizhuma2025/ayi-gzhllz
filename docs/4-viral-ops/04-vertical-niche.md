@@ -24,7 +24,7 @@ created: "2026-06-02"
 只要这群人的用户画像是高度一致的，你的选题完全可以根据他们的生活痛点进行多维度的延展。
 
 <p align="center">
-  <img src="/4-4-1.png" width="300" alt="你是否有思考过，你的公众号用户群体是什么？" />
+  <img src="https://n8jmply6oexq.meoo.fun/sb-api/storage/v1/object/public/ayi_oss/public/1780479992712-4-4-1.png" width="300" alt="你是否有思考过，你的公众号用户群体是什么？" />
 </p>
 
 

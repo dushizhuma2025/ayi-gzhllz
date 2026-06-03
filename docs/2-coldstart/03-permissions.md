@@ -17,7 +17,7 @@ created: "2026-06-02"
 
 微信提供了电脑网页端和手机 App 端两种开通途径，你可以任意选择一种进行操作：
 
-![PC网页端开通公众号流量主](/2-2-1.png)
+![PC网页端开通公众号流量主](https://n8jmply6oexq.meoo.fun/sb-api/storage/v1/object/public/ayi_oss/public/1780479992687-2-2-1.png)
 
 ### 途径一：电脑网页端（推荐，功能最全）
 1. 使用电脑浏览器登录微信公众平台后台：[mp.weixin.qq.com](https://mp.weixin.qq.com)
@@ -57,7 +57,7 @@ created: "2026-06-02"
    - *特点*：**公认的单价之王**。用户写留言或看留言时，停留时间较长，极易发生点击。**必开**。
 
 <p align="center">
-  <img src="/2-2-2.png" width="300" alt="开通流量主后别忘了开启广告位" />
+  <img src="https://n8jmply6oexq.meoo.fun/sb-api/storage/v1/object/public/ayi_oss/public/1780479992683-2-2-2.png" width="300" alt="开通流量主后别忘了开启广告位" />
 </p>
 
 

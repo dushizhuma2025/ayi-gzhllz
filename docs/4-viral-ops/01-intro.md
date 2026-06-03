@@ -10,7 +10,7 @@ created: "2026-06-02"
 对于公众号流量主而言，**选题和标题，直接决定了你的变现天花板**。
 
 <p align="center">
-  <img src="/4-1-1.png" width="300" alt="公众号文章的标题非常重要" />
+  <img src="https://n8jmply6oexq.meoo.fun/sb-api/storage/v1/object/public/ayi_oss/public/1780479992645-4-1-1.png" width="300" alt="公众号文章的标题非常重要" />
 </p>
 
 

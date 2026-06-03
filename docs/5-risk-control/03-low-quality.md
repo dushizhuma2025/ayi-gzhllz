@@ -20,14 +20,14 @@ created: "2026-06-02"
 ### 第一步：精准锁定违规文章
 
 <p align="center">
-  <img src="/5-3-1.jpg" width="300" alt="账号检测" />
+  <img src="https://n8jmply6oexq.meoo.fun/sb-api/storage/v1/object/public/ayi_oss/public/1780479992637-5-3-1.jpg" width="300" alt="账号检测" />
 </p>
 
 1. 登录微信公众号后台网页端，进入 **“账号成长”** ──> **“账号检测”** 模块；或者打开“公众号助手”手机 App，点击 **“我”** ──> **“账号检测”**。
 需要注意的是，账号检测现在还处于内测阶段，所以有部分用户可能无法看到。
 
 <p align="center">
-  <img src="/5-3-2.png" width="300" alt="账号检测结果" />
+  <img src="https://n8jmply6oexq.meoo.fun/sb-api/storage/v1/object/public/ayi_oss/public/1780479992633-5-3-2.png" width="300" alt="账号检测结果" />
 </p>
 
 2. 观察当前状态图标：

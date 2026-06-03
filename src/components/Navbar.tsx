@@ -6,7 +6,7 @@ export const Navbar: React.FC = () => {
     <header className="navbar">
       <div className="navbar-left-container">
         <Link to="/" className="navbar-logo">
-          <img src="/ayilogo.png" alt="Logo" className="navbar-logo-img" />
+          <img src="https://n8jmply6oexq.meoo.fun/sb-api/storage/v1/object/public/ayi_oss/public/1780479992750-ayilogo.png" alt="Logo" className="navbar-logo-img" />
           <span className="navbar-logo-text">阿一公众号流量主教程</span>
         </Link>
       </div>

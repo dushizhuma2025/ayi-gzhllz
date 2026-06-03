@@ -77,7 +77,7 @@ export const Home: React.FC = () => {
         <div className="hero-image-container">
           <div className="placeholder-image-wrapper">
             <img
-              src="/gzhllzad.png"
+              src="https://n8jmply6oexq.meoo.fun/sb-api/storage/v1/object/public/ayi_oss/public/1780479992748-gzhllzad.png"
               alt="微信公众号流量主从零起步到 AI 高效创作指南"
               className="hero-image"
             />

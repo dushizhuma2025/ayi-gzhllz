@@ -81,7 +81,7 @@ AI 会返回一份十分精确的文风 SOP 总结。
 ---
 
 ## 用Skill 工作流，可以极大提升工作效率
-![阿一AI站上有很多辅助公众号流量主工作的 skill](/3-3-1.png)
+![阿一AI站上有很多辅助公众号流量主工作的 skill](https://n8jmply6oexq.meoo.fun/sb-api/storage/v1/object/public/ayi_oss/public/1780479992755-3-3-1.png)
 
 对于 AI 使用能力较强，或者正在跟着阿一学习 AI 的同学，可以直接使用 Agent 做成 Skill 工作流，效率会高非常多。在 [阿一AI站](https://www.ayi001.xyz/) 上也有一些辅助分析、写作公众号文章skill，共大家使用。
 

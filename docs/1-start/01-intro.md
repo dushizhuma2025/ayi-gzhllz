@@ -9,7 +9,7 @@ created: "2026-06-02"
 
 ## 为什么选择公众号流量主？
 <p align="center">
-  <img src="/1-0-1.png" width="500" alt="公众号流量主" />
+  <img src="https://n8jmply6oexq.meoo.fun/sb-api/storage/v1/object/public/ayi_oss/public/1780479992776-1-0-1.png" width="500" alt="公众号流量主" />
 </p>
 
 在众多的自媒体平台中（如今日头条、搜狐号、知乎、百家号等），**微信公众号流量主**拥有无可比拟的优势，主要体现在**极高的单价和收益上限**：

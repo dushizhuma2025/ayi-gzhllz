@@ -25,6 +25,15 @@ export const Navbar: React.FC = () => {
         >
           阿一AI站
         </a>
+        <a 
+          href="https://github.com/dushizhuma2025/ayi-gzhllz" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="navbar-github-link"
+          title="GitHub 仓库"
+        >
+          <img src="/github.png" alt="GitHub" className="navbar-github-icon" />
+        </a>
       </div>
     </header>
   );

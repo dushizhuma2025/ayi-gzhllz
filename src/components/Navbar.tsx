@@ -32,7 +32,7 @@ export const Navbar: React.FC = () => {
           className="navbar-github-link"
           title="GitHub 仓库"
         >
-          <img src="/github.png" alt="GitHub" className="navbar-github-icon" />
+          <img src="https://n8jmply6oexq.meoo.fun/sb-api/storage/v1/object/public/ayi_oss/public/1780529080070-github.png" alt="GitHub" className="navbar-github-icon" />
         </a>
       </div>
     </header>

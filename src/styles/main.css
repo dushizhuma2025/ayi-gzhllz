@@ -5,17 +5,17 @@
   --bg-black: #000000;
   --bg-gray: #f5f5f7;
   --bg-white: #ffffff;
-  
+
   --text-primary: #1d1d1f;
   --text-secondary: #6e6e73;
-  
+
   --action-blue: #07c160;
   --action-blue-hover: #06ad56;
   --link-blue: #07c160;
-  
+
   --border-gray: #d2d2d7;
   --border-gray-light: #e5e5ea;
-  
+
   --navbar-height: 48px;
   --sidebar-width: 260px;
 }
@@ -38,7 +38,12 @@ body {
 }
 
 /* Display Titles with tighter tracking */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro SC", "SF Pro Icons", "Inter", "Noto Sans SC", "PingFang SC", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--text-primary);
   font-weight: 600;
@@ -68,7 +73,8 @@ p {
   margin-bottom: 16px;
 }
 
-ul, ol {
+ul,
+ol {
   margin-bottom: 16px;
   padding-left: 24px;
 }
@@ -108,7 +114,8 @@ table {
   font-size: 15px;
 }
 
-th, td {
+th,
+td {
   padding: 12px 16px;
   border-bottom: 1px solid var(--border-gray-light);
   text-align: left;
@@ -329,7 +336,7 @@ hr {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-gray-light);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   width: 32px;
   height: 32px;
   border-radius: 8px;
@@ -455,17 +462,18 @@ hr {
 /* Responsive styles */
 @media (max-width: 768px) {
   .sidebar {
-    display: none; /* 在简单起见，这里为移动端做基本隐藏，实际项目中会做折叠菜单 */
+    display: none;
+    /* 在简单起见，这里为移动端做基本隐藏，实际项目中会做折叠菜单 */
   }
-  
+
   .layout-main {
     margin-left: 0;
   }
-  
+
   .content-wrapper {
     padding: 32px 24px;
   }
-  
+
   .footer-content {
     padding: 0 24px;
   }
@@ -565,13 +573,26 @@ hr {
 }
 
 /* 呼吸感行高以及列表优化 */
+.markdown-body a {
+  color: var(--link-blue);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 500;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.markdown-body a:hover {
+  color: var(--action-blue-hover);
+  opacity: 0.85;
+}
+
 .markdown-body p {
   line-height: 1.7;
   margin-bottom: 20px;
   color: var(--text-primary);
 }
 
-.markdown-body ul, 
+.markdown-body ul,
 .markdown-body ol {
   margin-bottom: 20px;
   padding-left: 24px;
@@ -588,6 +609,81 @@ hr {
 
 .markdown-body pre {
   margin: 20px 0;
+}
+
+/* Style images in markdown articles */
+.markdown-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin: 24px auto;
+  display: block;
+}
+
+/* Image captions derived from alt attributes */
+.markdown-body .image-caption {
+  display: block;
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin-top: -16px;
+  margin-bottom: 24px;
+  font-style: normal;
+  opacity: 0.85;
+}
+
+/* GitHub-style Markdown Alerts */
+.markdown-body .markdown-alert {
+  padding: 16px 20px;
+  margin: 24px 0;
+  border-left: 4px solid;
+  border-radius: 0 12px 12px 0;
+  background-color: var(--bg-gray);
+}
+.markdown-body .markdown-alert-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+.markdown-body .markdown-alert p {
+  margin-bottom: 8px;
+}
+.markdown-body .markdown-alert p:last-child {
+  margin-bottom: 0;
+}
+.markdown-body .markdown-alert-note {
+  border-left-color: #007aff;
+}
+.markdown-body .markdown-alert-note .markdown-alert-title {
+  color: #007aff;
+}
+.markdown-body .markdown-alert-tip {
+  border-left-color: #34c759;
+}
+.markdown-body .markdown-alert-tip .markdown-alert-title {
+  color: #34c759;
+}
+.markdown-body .markdown-alert-important {
+  border-left-color: #af52de;
+}
+.markdown-body .markdown-alert-important .markdown-alert-title {
+  color: #af52de;
+}
+.markdown-body .markdown-alert-warning {
+  border-left-color: #ff9500;
+}
+.markdown-body .markdown-alert-warning .markdown-alert-title {
+  color: #ff9500;
+}
+.markdown-body .markdown-alert-caution {
+  border-left-color: #ff3b30;
+}
+.markdown-body .markdown-alert-caution .markdown-alert-title {
+  color: #ff3b30;
 }
 
 /* Hide markdown hr separators as requested */
@@ -627,7 +723,7 @@ hr {
 /* Hero Section */
 .home-hero {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: center;
   margin-bottom: 96px;
@@ -693,10 +789,10 @@ hr {
 .placeholder-image-wrapper {
   position: relative;
   width: 100%;
-  max-width: 540px;
+  max-width: 640px;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--border-gray-light);
   background-color: #1c1c1e;
   transition: transform 0.3s ease;
@@ -739,7 +835,8 @@ hr {
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
-  color: #30d158; /* Premium green */
+  color: #30d158;
+  /* Premium green */
 }
 
 .glass-text {
@@ -777,7 +874,7 @@ hr {
 
 .highlight-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }
 
 .highlight-icon {
@@ -827,7 +924,7 @@ hr {
 
 .outline-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
 }
 
 .card-header {
@@ -905,22 +1002,21 @@ hr {
     gap: 32px;
     margin-bottom: 64px;
   }
-  
+
   .hero-image-container {
     order: -1;
   }
-  
+
   .hero-title {
     font-size: 36px;
   }
-  
+
   .highlights-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .outline-grid {
     grid-template-columns: 1fr;
   }
 }
-

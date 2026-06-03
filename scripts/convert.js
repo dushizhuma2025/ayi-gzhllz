@@ -86,6 +86,50 @@ function main() {
     let html = '';
     try {
       html = marked.parse(body);
+
+      // GitHub-style alerts post-processing
+      const alertTypes = {
+        NOTE: { title: '备注', icon: '📝', class: 'note' },
+        TIP: { title: '提示', icon: '💡', class: 'tip' },
+        IMPORTANT: { title: '重要', icon: '⚠️', class: 'important' },
+        WARNING: { title: '警告', icon: '⚡', class: 'warning' },
+        CAUTION: { title: '注意', icon: '🛑', class: 'caution' }
+      };
+
+      html = html.replace(/<blockquote>([\s\S]*?)<\/blockquote>/g, (match, innerHtml) => {
+        const alertMatch = innerHtml.match(/^\s*<p>\s*\[!(IMPORTANT|NOTE|TIP|WARNING|CAUTION)\]/i);
+        if (alertMatch) {
+          const type = alertMatch[1].toUpperCase();
+          const config = alertTypes[type];
+          const cleanedInner = innerHtml.replace(/^\s*<p>\s*\[!(IMPORTANT|NOTE|TIP|WARNING|CAUTION)\]\s*/i, '<p>');
+          return `<div class="markdown-alert markdown-alert-${config.class}">
+  <p class="markdown-alert-title"><span class="alert-icon">${config.icon}</span>${config.title}</p>
+  ${cleanedInner.trim()}
+</div>`;
+        }
+        return match;
+      });
+
+      // Convert LaTeX arrows to unicode
+      html = html.replace(/\$\\rightarrow\$/g, ' → ')
+                 .replace(/\\rightarrow/g, ' → ')
+                 .replace(/\$\\Rightarrow\$/g, ' ⇒ ')
+                 .replace(/\\Rightarrow/g, ' ⇒ ')
+                 .replace(/\$\\leftarrow\$/g, ' ← ')
+                 .replace(/\\leftarrow/g, ' ← ')
+                 .replace(/\$\\Leftarrow\$/g, ' ⇐ ')
+                 .replace(/\\Leftarrow/g, ' ⇐ ')
+                 .replace(/\$\\to\$/g, ' → ')
+                 .replace(/\\to\b/g, ' → ');
+
+      // Parse image alt tags and generate caption spans below images
+      html = html.replace(/<img([^>]+)alt="([^"]+)"([^>]*)>/gi, (match, beforeAlt, altText, afterAlt) => {
+        const trimmedAlt = altText.trim();
+        if (trimmedAlt) {
+          return `<img${beforeAlt}alt="${altText}"${afterAlt}><span class="image-caption">${trimmedAlt}</span>`;
+        }
+        return match;
+      });
     } catch (e) {
       console.error(`Error parsing ${relative}: ${e.message}`);
       html = `<p>Error rendering content</p>`;
